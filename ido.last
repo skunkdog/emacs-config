@@ -1,0 +1,94 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/jesus/code/C/Beej's-Guide/" . "Uninitialised-value/")
+ ("/home/jesus/code/C/The-C-Programming-Language/" . "Count-occurences/")
+ ("/home/jesus/code/C/" . "The-C-Programming-Language/")
+ ("/home/jesus/code/" . "C/")
+ ("/home/jesus/sources/dwm-flexipatch/" . "patch/")
+ ("/home/" . "jesus/")
+ ("/home/jesus/.config/" . "fish/")
+ ("/home/jesus/sources/" . "dwm-flexipatch/")
+ ("/home/jesus/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/jesus/code/C/Beej's-Guide/Uninitialised-value/"
+ "/home/jesus/.emacs.d/"
+ "/home/jesus/code/C/The-C-Programming-Language/Exercises/Histogram/"
+ "/home/jesus/code/C/The-C-Programming-Language/"
+ "/home/jesus/code/C/The-C-Programming-Language/Count-occurences/"
+ "/home/jesus/.config/neomutt/"
+ "/home/jesus/.config/"
+ "/home/jesus/"
+ "/home/jesus/code/C/Number-to-char/"
+ "/home/jesus/sources/"
+ "/home/jesus/porting/"
+ "/home/jesus/code/C/"
+ "/home/jesus/sources/dwm-flexipatch/"
+ "/home/jesus/.config/picom/"
+ "/home/jesus/scripts/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "main.c"
+ "init.el"
+ "neomuttrc"
+ ".bashrc"
+ ".zshrc"
+ "patches.h"
+ "picom.conf"
+ "config.h"
+ "config.def.h"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/jesus/code/C/Beej's-Guide/Uninitialised-value/" (27193 41174 504422 696000) "../" "./")
+
+ ("/home/jesus/code/C/" (27193 41145 904114 79000) "Beej's-Guide/" "Number-to-char/" "The-C-Programming-Language/" "../" "./")
+
+ ("/home/jesus/.config/" (27193 20635 934113 721000) "htop/" "rofi/" "Thunar/" "qutebrowser/" "vlc/" "mpv/" "alacritty/" "mimeapps.list" "picom/" "neomutt/" "../" "./")
+
+ ("/home/jesus/.config/neomutt/" (27193 31692 334520 41000) "neomuttrc~" "neomuttrc" "tmp/" "../" "./")
+
+ ("/home/jesus/code/C/The-C-Programming-Language/Count-occurences/" (27193 36278 424121 533000) "#main.c#" "main.c~" "main.c" "a.out" "../" "./")
+
+ ("/home/jesus/code/C/The-C-Programming-Language/Exercises/Histogram/" (27193 37718 744121 296000) "#main.c#" "../" "./")
+
+ ("/home/jesus/.emacs.d/" (27193 40703 314113 536000) "recentf" "tramp" ".lsp-session-v1" "#ido.last#" ".cache/" "ido.last~" "eshell/" "ido.last" "history" "init.el~" "%backup%~" "elpa/" "init.el" "auto-save-list/" "../" "./")
+
+ ("/home/jesus/code/C/Beej's-Guide/" (27193 41145 894515 10000) "../" "./")
+
+ ("/home/jesus/code/C/The-C-Programming-Language/Hello-World/" (27193 38577 604121 143000) "Hello-world.c~" "Hello-world.c" "a.out" "../" "./")
+
+ ("/home/jesus/code/C/The-C-Programming-Language/" (27193 37272 614114 586000) "List-of-things-i-have-to-know.org" "Exercises/" "Count-occurences/" "Hello-World/" "../" "./")
+
+ ("/home/jesus/" (27193 27139 544516 595000) ".bashrc.omb-uninstalled-20260621144915" ".zcompdump" ".zshrc~" ".osh-update" ".bash_profile" ".screen/" ".sdirs" ".mozilla/" ".pinerc" "template/" "porting/" ".bash_history" ".bashrc~" ".swp" ".zshrc" "documents/" ".thunderbird/" "code/" ".fehbg" "pictures/" ".xinitrc" ".#config.h" "sources/" "Downloads/" "scripts/" ".python_history" ".xsession~" ".gitconfig" ".bashrc" ".Downloads/" ".emacs.d/" ".pki/" "ovpn/" ".local/" "texts/" ".vim/" ".viminfo" ".config/" ".dbus/" ".Xauthority" ".cache/" ".sndio/" ".xsession-errors" ".profile" ".mailrc" ".login" ".cvsrc" ".cshrc" ".Xdefaults" ".ssh/" "../" "./")
+
+ ("/home/jesus/code/C/Number-to-char/" (27193 13326 834114 708000) "main.c~" "main.c" "a.out" "../" "./")
+
+ ("/home/jesus/.config/picom/" (27189 31390 601417 868000) "picom.conf" "picom.core" "../" "./")
+
+ ("/home/jesus/sources/dwm-flexipatch/" (27191 54161 382830 542000) "patches.h~" "config.h~" "util.o" "#config.h#" "dwm.o" "drw.o" "patches.h" "config.h" "util.h" "util.c" "transient.c" "patches.def.h" "patch/" "dwm.png" "dwm.desktop" "dwm.c" "dwm.1" "drw.h" "drw.c" "config.mk" "config.def.h" "README.md" "README" "Makefile" "LICENSE" "dwm" ".git/" "../" "./")
+
+ ("/home/jesus/porting/" (27193 7974 567060 300000) "../" "./")
+
+ ("/home/jesus/sources/" (27193 6401 227539 619000) "ani-cli/" "rofi/" "dwm-flexipatch/" "zapret/" "rofi-themes-collection/" "../" "./")
+
+ ("/home/jesus/code/" (27188 16307 579616 564000) "C/" "../" "./")
+
+ ("/home/jesus/.config/fish/" (27189 38497 301411 58000) "functions/" "fish_variables" "config.fish~" "config.fish" "../" "./")
+
+ ("/home/jesus/sources/dwm-flexipatch/patch/" (27186 44465 501295 62000) "zoomswap.h" "zoomswap.c" "xresources.h" "xresources.c" "xrdb.h" "xrdb.c" "xkb.h" "winview.h" "xkb.c" "winview.c" "warp.h" "vanitygaps.h" "vanitygaps.c" "unfloatvisible.h" "unfloatvisible.c" "transferall.h" "transferall.c" "transfer.h" "transfer.c" "toggletopbar.h" "toggletopbar.c" "togglefullscreen.h" "togglefullscreen.c" "tapresize.h" "tapresize.c" "tagswapmon.h" "tagswapmon.c" "tagothermonitor.h" "tagothermonitor.c" "tagallmon.h" "warp.c" "tagallmon.c" "tagall.h" "tagall.c" "tab.h" "switchcol.h" "switchcol.c" "swaptags.h" "swaptags.c" "swapfocus.h" "swapfocus.c" "swallow.h" "swallow.c" "sticky.h" "sticky.c" "stacker.h" "stacker.c" "sortscreens.h" "sortscreens.c" "sizehints_ruled.h" "sizehints_ruled.c" "shiftviewclients.h" "shiftviewclients.c" "shiftview.h" "tab.c" "shiftview.c" "shifttagclients.h" "shifttagclients.c" "shifttag.h" "shifttag.c" "shiftswaptags.h" "shiftswaptags.c" "shiftboth.h" "shiftboth.c" "shift.h" "shift.c" "setborderpx.h" "setborderpx.c" "selfrestart.h" "selfrestart.c" "seamless_restart.h" "seamless_restart.c" "scratchpad_alt_1.h" "scratchpad_alt_1.c" "scratchpad.h" "roundedcorners.h" "scratchpad.c" "roundedcorners.c" "rotatestack.h" "rotatestack.c" "riodraw.h" "riodraw.c" "restartsig.h" "restartsig.c" "reorganizetags.h" "reorganizetags.c" "renamed_scratchpads.h" "renamed_scratchpads.c" "recttoclient.h" "recttoclient.c" "push_no_master.h" "push_no_master.c" "push.h" "push.c" "placemouse.h" "placemouse.c" "placedir.h" "placedir.c" "pertag.h" "pertag.c" "nomodbuttons.h" "nomodbuttons.c" "nametag.h" "nametag.c" "mpdcontrol.h" "mpdcontrol.c" "movestack.h" "movestack.c" "moveresize.h" "moveresize.c" "moveplace.h" "moveplace.c" "movecenter.h" "movecenter.c" "maximize.h" "maximize.c" "layoutmenu.sh" "layout_tile.h" "layout_tile.c" "layout_nrowgrid.h" "layout_nrowgrid.c" "layout_monocle.h" "layout_monocle.c" "layout_horizgrid.h" "layout_horizgrid.c" "layout_grid.h" "layout_grid.c" "layout_gapplessgrid.h" "layout_gapplessgrid.c" "layout_flextile-deluxe.h" "layout_flextile-deluxe.c" "layout_fibonacci.h" "layout_fibonacci.c" "layout_facts.c" "layout_deck.h" "layout_deck.c" "layout_columns.h" "layout_columns.c" "layout_centeredmaster.h" "layout_centeredmaster.c" "layout_centeredfloatingmaster.h" "layout_centeredfloatingmaster.c" "layout_bstackhoriz.h" "layout_bstackhoriz.c" "layout_bstack.h" "layout_bstack.c" "killunsel.h" "killunsel.c" "keymodes.h" "keymodes.c" "ipc/" "ipc.h" "ipc.c" "insets.h" "insets.c" "inplacerotate.h" "inplacerotate.c" "include.h" "include.c" "games.h" "games.c" "fullscreen.h" "fullscreen.c" "fsignal.h" "fsignal.c" "focusurgent.h" "focusurgent.c" "focusmaster.h" "focusmaster.c" "focusfollowmouse.h" "focusfollowmouse.c" "focusdir.h" "focusdir.c" "focusadjacenttag.h" "focusadjacenttag.c" "floatpos.h" "floatpos.c" "fakefullscreenclient.h" "fakefullscreenclient.c" "exresize.h" "exresize.c" "dwmc.h" "dwmc.c" "dwmc" "dragmfact.h" "dragmfact.c" "dragfact.h" "dragfact.c" "dragcfact.h" "dragcfact.c" "distributetags.h" "distributetags.c" "decorationhints.h" "decorationhints.c" "cyclelayouts.h" "cyclelayouts.c" "cool_autostart.h" "cool_autostart.c" "combo.h" "combo.c" "cmdcustomize.h" "cmdcustomize.c" "cfacts.h" "cfacts.c" "bar_wintitleactions.h" "bar_wintitleactions.c" "bar_wintitle_hidden.h" "bar_wintitle_hidden.c" "bar_wintitle_floating.h" "bar_wintitle_floating.c" "bar_wintitle.h" "bar_wintitle.c" "bar_winicon.h" "bar_winicon.c" "bar_vtcolors.h" "bar_vtcolors.c" "bar_tags.h" "bar_tagpreview.h" "bar_tagpreview.c" "bar_taglabels.h" "bar_taglabels.c" "bar_tagicons.h" "bar_tagicons.c" "bar_taggrid.h" "bar_taggrid.c" "bar_tabgroups.h" "bar_tabgroups.c" "bar_systray.h" "bar_systray.c" "bar_statuscolors.h" "bar_statuscolors.c" "bar_statuscmd.h" "bar_statuscmd.c" "bar_statusbutton.h" "bar_statusbutton.c" "bar_status2d.h" "bar_status2d.c" "bar_status.h" "bar_powerline_tags.h" "bar_powerline_tags.c" "bar_powerline_status.h" "bar_powerline_status.c" "bar_status.c" "bar_ltsymbol.h" "bar_ltsymbol.c" "bar_layoutmenu.h" "bar_layoutmenu.c" "bar_launcher.h" "bar_launcher.c" "bar_indicators.h" "bar_indicators.c" "bar_holdbar.h" "bar_holdbar.c" "bar_flexwintitle.h" "bar_flexwintitle.c" "bar_fancybar.h" "bar_fancybar.c" "bar_ewmhtags.h" "bar_ewmhtags.c" "bar_dwmblocks.h" "bar_dwmblocks.c" "bar_awesomebar.h" "bar_tags.c" "bar_awesomebar.c" "bar_anybar.h" "bar_anybar.c" "bar_alternativetags.h" "bar_alternativetags.c" "bar_alpha.h" "bar_alpha.c" "bar.h" "bar.c" "banish.h" "banish.c" "autostart.h" "autostart.c" "attachx.h" "attachx.c" "aspectresize.h" "aspectresize.c" "alwaysontop.h" "alwaysontop.c" "alttab.h" "alttab.c" "../" "./")
+
+ ("/home/" (27180 17202 932545 924000) "lost+found/" "_sysupgrade/" "jesus/" "../" "./")
+
+ ("/home/jesus/scripts/" (27187 4751 569171 244000) "#startup#" "startup" "LICENSE" ".git/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

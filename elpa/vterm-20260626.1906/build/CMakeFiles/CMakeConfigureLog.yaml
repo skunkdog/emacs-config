@@ -1,0 +1,1178 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      The system is: OpenBSD - 7.9 - amd64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "make"
+      - "gmake"
+      - "smake"
+    candidate_directories:
+      - "/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/bin/make"
+    found: "/usr/bin/make"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cc"
+      - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
+    candidate_directories:
+      - "/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/bin/cc"
+    found: "/usr/bin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/usr/local/share/cmake/Modules/"
+    found: "/usr/local/share/cmake/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/4.3.3/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar"
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/llvm-ar"
+      - "/bin/llvm-ar"
+      - "/sbin/llvm-ar"
+      - "/usr/sbin/llvm-ar"
+      - "/usr/X11R6/bin/llvm-ar"
+      - "/usr/local/bin/llvm-ar"
+      - "/usr/local/sbin/llvm-ar"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib"
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/llvm-ranlib"
+      - "/bin/llvm-ranlib"
+      - "/sbin/llvm-ranlib"
+      - "/usr/sbin/llvm-ranlib"
+      - "/usr/X11R6/bin/llvm-ranlib"
+      - "/usr/local/bin/llvm-ranlib"
+      - "/usr/local/sbin/llvm-ranlib"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-strip"
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/llvm-strip"
+      - "/bin/llvm-strip"
+      - "/sbin/llvm-strip"
+      - "/usr/sbin/llvm-strip"
+      - "/usr/X11R6/bin/llvm-strip"
+      - "/usr/local/bin/llvm-strip"
+      - "/usr/local/sbin/llvm-strip"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld.lld"
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    found: "/usr/bin/ld.lld"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-nm"
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/llvm-nm"
+      - "/bin/llvm-nm"
+      - "/sbin/llvm-nm"
+      - "/usr/sbin/llvm-nm"
+      - "/usr/X11R6/bin/llvm-nm"
+      - "/usr/local/bin/llvm-nm"
+      - "/usr/local/sbin/llvm-nm"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    found: "/usr/bin/llvm-objdump"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    found: "/usr/bin/llvm-objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    found: "/usr/bin/llvm-readelf"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/llvm-dlltool"
+      - "/bin/llvm-dlltool"
+      - "/sbin/llvm-dlltool"
+      - "/usr/sbin/llvm-dlltool"
+      - "/usr/X11R6/bin/llvm-dlltool"
+      - "/usr/local/bin/llvm-dlltool"
+      - "/usr/local/sbin/llvm-dlltool"
+      - "/usr/bin/dlltool"
+      - "/bin/dlltool"
+      - "/sbin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/usr/X11R6/bin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    found: "/usr/bin/llvm-addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/bin/tapi"
+      - "/sbin/tapi"
+      - "/usr/sbin/tapi"
+      - "/usr/X11R6/bin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/local/sbin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "LLVM archiver"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar-22.1"
+      - "llvm-ar-22"
+      - "llvm-ar22"
+      - "llvm-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/llvm-ar-22.1"
+      - "/bin/llvm-ar-22.1"
+      - "/sbin/llvm-ar-22.1"
+      - "/usr/sbin/llvm-ar-22.1"
+      - "/usr/X11R6/bin/llvm-ar-22.1"
+      - "/usr/local/bin/llvm-ar-22.1"
+      - "/usr/local/sbin/llvm-ar-22.1"
+      - "/usr/bin/llvm-ar-22"
+      - "/bin/llvm-ar-22"
+      - "/sbin/llvm-ar-22"
+      - "/usr/sbin/llvm-ar-22"
+      - "/usr/X11R6/bin/llvm-ar-22"
+    found: "/usr/local/bin/llvm-ar-22"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "Generate index for LLVM archive"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib-22.1"
+      - "llvm-ranlib-22"
+      - "llvm-ranlib22"
+      - "llvm-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/llvm-ranlib-22.1"
+      - "/bin/llvm-ranlib-22.1"
+      - "/sbin/llvm-ranlib-22.1"
+      - "/usr/sbin/llvm-ranlib-22.1"
+      - "/usr/X11R6/bin/llvm-ranlib-22.1"
+      - "/usr/local/bin/llvm-ranlib-22.1"
+      - "/usr/local/sbin/llvm-ranlib-22.1"
+      - "/usr/bin/llvm-ranlib-22"
+      - "/bin/llvm-ranlib-22"
+      - "/sbin/llvm-ranlib-22"
+      - "/usr/sbin/llvm-ranlib-22"
+      - "/usr/X11R6/bin/llvm-ranlib-22"
+    found: "/usr/local/bin/llvm-ranlib-22"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_CLANG_SCAN_DEPS"
+    description: "`clang-scan-deps` dependency scanner"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-scan-deps-22.1"
+      - "clang-scan-deps-22"
+      - "clang-scan-deps22"
+      - "clang-scan-deps"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+    searched_directories:
+      - "/usr/bin/clang-scan-deps-22.1"
+      - "/bin/clang-scan-deps-22.1"
+      - "/sbin/clang-scan-deps-22.1"
+      - "/usr/sbin/clang-scan-deps-22.1"
+      - "/usr/X11R6/bin/clang-scan-deps-22.1"
+      - "/usr/local/bin/clang-scan-deps-22.1"
+      - "/usr/local/sbin/clang-scan-deps-22.1"
+      - "/usr/bin/clang-scan-deps-22"
+      - "/bin/clang-scan-deps-22"
+      - "/sbin/clang-scan-deps-22"
+      - "/usr/sbin/clang-scan-deps-22"
+      - "/usr/X11R6/bin/clang-scan-deps-22"
+    found: "/usr/local/bin/clang-scan-deps-22"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/local/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/CMakeScratch/TryCompile-S2k0Je"
+      binary: "/home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/CMakeScratch/TryCompile-S2k0Je"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/CMakeScratch/TryCompile-S2k0Je'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ee709/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_ee709.dir/build.make CMakeFiles/cmTC_ee709.dir/build
+        Building C object CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake/Modules/CMakeCCompilerABI.c
+        OpenBSD clang version 22.1.6
+        Target: amd64-unknown-openbsd7.9
+        Thread model: posix
+        InstalledDir: /usr/bin
+         (in-process)
+         "/usr/bin/cc" -cc1 -triple amd64-unknown-openbsd7.9 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 1 -pic-is-pie -mframe-pointer=all -relaxed-aliasing -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/CMakeScratch/TryCompile-S2k0Je -v -fcoverage-compilation-dir=/home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/CMakeScratch/TryCompile-S2k0Je -resource-dir /usr/lib/clang/22 -dependency-file CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/22/include -internal-externc-isystem /usr/include -ferror-limit 19 -femulated-tls -fwrapv -D_RET_PROTECTOR -ret-protector -fcf-protection=branch -fno-jump-tables -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-valloc -fno-builtin-free -fno-builtin-strdup -fno-builtin-strndup -faddrsig -fdwarf2-cfi-asm -o CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -x c /usr/local/share/cmake/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 22.1.6 based upon LLVM 22.1.6 default target amd64-unknown-openbsd7.9
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/clang/22/include
+         /usr/include
+        End of search list.
+        Linking C executable cmTC_ee709
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee709.dir/link.txt --verbose=1
+        OpenBSD clang version 22.1.6
+        Target: amd64-unknown-openbsd7.9
+        Thread model: posix
+        InstalledDir: /usr/bin
+         "/usr/bin/ld" -e __start --eh-frame-hdr -dynamic-linker /usr/libexec/ld.so -o cmTC_ee709 /usr/lib/crt0.o /usr/lib/crtbegin.o -L/usr/lib CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -rpath-link /usr/X11R6/lib:/usr/local/lib -lcompiler_rt -lc -lcompiler_rt /usr/lib/crtend.o
+        /usr/bin/cc  -v CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -o cmTC_ee709  -Wl,-rpath-link,/usr/X11R6/lib:/usr/local/lib
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/local/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/clang/22/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/clang/22/include] ==> [/usr/lib/clang/22/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/clang/22/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/local/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/CMakeScratch/TryCompile-S2k0Je']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ee709/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_ee709.dir/build.make CMakeFiles/cmTC_ee709.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [OpenBSD clang version 22.1.6]
+        ignore line: [Target: amd64-unknown-openbsd7.9]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/bin/cc" -cc1 -triple amd64-unknown-openbsd7.9 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 1 -pic-is-pie -mframe-pointer=all -relaxed-aliasing -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/CMakeScratch/TryCompile-S2k0Je -v -fcoverage-compilation-dir=/home/jesus/.emacs.d/elpa/vterm-20260626.1906/build/CMakeFiles/CMakeScratch/TryCompile-S2k0Je -resource-dir /usr/lib/clang/22 -dependency-file CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/22/include -internal-externc-isystem /usr/include -ferror-limit 19 -femulated-tls -fwrapv -D_RET_PROTECTOR -ret-protector -fcf-protection=branch -fno-jump-tables -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-valloc -fno-builtin-free -fno-builtin-strdup -fno-builtin-strndup -faddrsig -fdwarf2-cfi-asm -o CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -x c /usr/local/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 22.1.6 based upon LLVM 22.1.6 default target amd64-unknown-openbsd7.9]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/clang/22/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_ee709]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee709.dir/link.txt --verbose=1]
+        ignore line: [OpenBSD clang version 22.1.6]
+        ignore line: [Target: amd64-unknown-openbsd7.9]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        link line: [ "/usr/bin/ld" -e __start --eh-frame-hdr -dynamic-linker /usr/libexec/ld.so -o cmTC_ee709 /usr/lib/crt0.o /usr/lib/crtbegin.o -L/usr/lib CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o -rpath-link /usr/X11R6/lib:/usr/local/lib -lcompiler_rt -lc -lcompiler_rt /usr/lib/crtend.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-e] ==> ignore
+          arg [__start] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/usr/libexec/ld.so] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_ee709] ==> ignore
+          arg [/usr/lib/crt0.o] ==> obj [/usr/lib/crt0.o]
+          arg [/usr/lib/crtbegin.o] ==> obj [/usr/lib/crtbegin.o]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [CMakeFiles/cmTC_ee709.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-rpath-link] ==> ignore
+          arg [/usr/X11R6/lib:/usr/local/lib] ==> ignore
+          arg [-lcompiler_rt] ==> lib [compiler_rt]
+          arg [-lc] ==> lib [c]
+          arg [-lcompiler_rt] ==> lib [compiler_rt]
+          arg [/usr/lib/crtend.o] ==> obj [/usr/lib/crtend.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [compiler_rt;c;compiler_rt]
+        implicit objs: [/usr/lib/crt0.o;/usr/lib/crtbegin.o;/usr/lib/crtend.o]
+        implicit dirs: [/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/usr/local/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/local/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      LLD 22.1.6 (compatible with GNU linkers)
+  -
+    kind: "find-v1"
+    backtrace:
+      - "CMakeLists.txt:33 (find_path)"
+    mode: "path"
+    variable: "LIBVTERM_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "vterm.h"
+    candidate_directories:
+      - "/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+    searched_directories:
+      - "/bin/vterm.h"
+      - "/usr/bin/vterm.h"
+      - "/sbin/vterm.h"
+      - "/usr/sbin/vterm.h"
+      - "/usr/X11R6/bin/vterm.h"
+      - "/usr/local/bin/vterm.h"
+      - "/usr/local/sbin/vterm.h"
+      - "/usr/local/include/vterm.h"
+      - "/usr/local/vterm.h"
+      - "/usr/include/vterm.h"
+      - "/usr/vterm.h"
+      - "/include/vterm.h"
+      - "/usr/X11R6/include/vterm.h"
+      - "/usr/X11R6/vterm.h"
+      - "/usr/pkg/include/vterm.h"
+      - "/usr/pkg/vterm.h"
+      - "/opt/include/vterm.h"
+      - "/opt/vterm.h"
+      - "/usr/include/X11/vterm.h"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr/local"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/usr/local"
+        - "/usr/X11R6"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "CMakeLists.txt:73 (find_program)"
+    mode: "program"
+    variable: "LIBTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "libtool"
+      - "glibtool"
+    candidate_directories:
+      - "/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/bin/libtool"
+    found: "/usr/bin/libtool"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr/local"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/usr/local"
+        - "/usr/X11R6"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/FindGit.cmake:111 (find_program)"
+      - "/usr/local/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake:926 (find_package)"
+      - "/usr/local/share/cmake/Modules/ExternalProject.cmake:3258 (_ep_add_download_command)"
+      - "CMakeLists.txt:78 (ExternalProject_add)"
+    mode: "program"
+    variable: "GIT_EXECUTABLE"
+    description: "Git command line client"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git"
+    candidate_directories:
+      - "/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/usr/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/bin/git"
+      - "/usr/bin/git"
+      - "/sbin/git"
+      - "/usr/sbin/git"
+      - "/usr/X11R6/bin/git"
+    found: "/usr/local/bin/git"
+    search_context:
+      ENV{PATH}:
+        - "/bin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/usr/sbin"
+        - "/usr/X11R6/bin"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr/local"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/usr/local"
+        - "/usr/X11R6"
+...
