@@ -1,2 +1,0 @@
-/doas:root@localhost:/etc/X11/xenodm/Xsession
-/tmp/#!doas:root@localhost:!etc!X11!xenodm!Xsession#

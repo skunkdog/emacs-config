@@ -1,4 +1,0 @@
-/doas:root@localhost:/etc/sysctl.conf
-/tmp/#!doas:root@localhost:!etc!sysctl.conf#
-/home/jesus/.emacs.d/init.el
-/home/jesus/.emacs.d/#init.el#
