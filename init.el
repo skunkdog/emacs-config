@@ -1,4 +1,5 @@
-;;     ▄▖    ▜                     ▄▖    ▜
+;;-*- lexical-binding: t; -*-
+;;     ▄▖    ▜                     ▄▖    ▜  
 ;;     ▌ ▛▌▛▌▐ ▀▌▛▘▛▘              ▌ ▛▌▛▌▐ ▀▌▛▘▛▘
 ;;     ▙▖▙▌▙▌▐▖█▌▄▌▄▌              ▙▖▙▌▙▌▐▖█▌▄▌▄▌
 
@@ -6,6 +7,8 @@
 ;; █▌▛▛▌▀▌▛▘▛▘  ▛▘▛▌▛▌▜▘▌▛▌    █▌▛▛▌▀▌▛▘▛▘  ▛▘▛▌▛▌▜▘▌▛▌
 ;; ▙▖▌▌▌█▌▙▖▄▌  ▙▖▙▌▌▌▐ ▌▙▌    ▙▖▌▌▌█▌▙▖▄▌  ▙▖▙▌▌▌▐ ▌▙▌
 ;;                       ▄▌                          ▄▌
+
+
 
 
 ;; CUSTOM FUNCTIONS
@@ -27,7 +30,7 @@
  '(custom-safe-themes t)
  '(package-selected-packages
    '(auto-complete-clang auto-complete-clang-async avy buttercup company
-			 crux dashboard dimmer doom-themes eat ghostel
+			 crux dashboard doom-themes eat ghostel
 			 goto-line-preview gruber-darker-theme
 			 gruber-darker-themezz gruvbox-theme helm
 			 indent-guide markdown-mode mono-complete
@@ -44,8 +47,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Iosevka" :foundry "UKWN" :slant normal :weight medium :height 150 :width normal))))
- '(font-lock-string-face ((t (:foreground "VioletRed4")))))
+ '(default ((t (:family "Iosevka" :foundry "UKWN" :slant normal :weight medium :height 150 :width normal)))))
 
 
 
@@ -104,21 +106,12 @@
   (minibuffer-prompt-properties
    '(read-only t cursor-intangible t face minibuffer-prompt)))
 
-;; ;; Dashboard
-;; (require 'dashboard)
-;; (dashboard-setup-startup-hook)
-;; (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
-
 
 ;; Highlithing mode
 (volatile-highlights-mode 1)
 
 
-;; Dimmer mode
-(dimmer-mode 1)
 
-;; Indent bars
-;;(indent-bars-mode 1)
 
 ;; Whitespace mode
 (whitespace-mode 0)
@@ -179,7 +172,7 @@
 (gcmh-mode 1)
 
 ;; Modline
-(setq sml/theme 'dark)
+(setq sml/theme 'respectful)
 (sml/setup)
 
 ;; Snippets
@@ -188,6 +181,7 @@
 
 ;; Vterm
 (setq vterm-timer-delay 0.01) ;; THE BEST SETTING EVER
+
 
 ;; END PACKAGES
 
@@ -215,7 +209,7 @@
 ;; avy
 (global-set-key (kbd "C-M-;") 'avy-goto-char)
 
-;; ;; Multiple cursors
+;; Multiple cursors
 ;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
 ;; Surround
@@ -246,5 +240,6 @@
 (global-set-key (kbd "M-p") (lambda () (interactive) (previous-logical-line) (recenter)))
 (global-set-key (kbd "M-n") (lambda () (interactive) (next-logical-line) (recenter)))
 
-;; term on F1
+
 (global-set-key (kbd "<f1>") 'vterm-toggle)
+
