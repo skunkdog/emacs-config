@@ -9,8 +9,6 @@
 ;;                       ▄▌                          ▄▌
 
 
-
-
 ;; CUSTOM FUNCTIONS
 ;; Testing function
 (defun the-best-window-manager()
@@ -29,17 +27,17 @@
  '(custom-enabled-themes '(doom-badger))
  '(custom-safe-themes t)
  '(package-selected-packages
-   '(auto-complete-clang auto-complete-clang-async avy buttercup company
-			 crux dashboard doom-themes eat ghostel
-			 goto-line-preview gruber-darker-theme
+   '(auto-complete-clang auto-complete-clang-async avy buttercup corfu
+			 counsel crux dashboard doom-themes eat
+			 ghostel goto-line-preview gruber-darker-theme
 			 gruber-darker-themezz gruvbox-theme helm
-			 indent-guide markdown-mode mono-complete
-			 multiple-cursors nerd-icons prism pulsar
-			 rainbow-delimiters recomplete smart-mode-line
-			 smartscan spacemacs-theme surround
-			 tab-line-nerd-icons vertico visual-replace
-			 volatile-highlights yasnippet)))
-
+			 indent-guide ivy markdown-mode mono-complete
+			 multiple-cursors nerd-icons nerd-icons-corfu
+			 pdf-tools prism pulsar rainbow-delimiters
+			 recomplete smart-mode-line smartscan
+			 spacemacs-theme surround swiper
+			 tab-line-nerd-icons visual-replace
+			 volatile-highlights yafolding yasnippet)))
 
 ;; Setting fonts
 (custom-set-faces
@@ -48,8 +46,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Iosevka" :foundry "UKWN" :slant normal :weight medium :height 150 :width normal)))))
-
-
 
 ;; Disable menu and tool bar
 (menu-bar-mode 0)
@@ -84,43 +80,14 @@
 (add-to-list 'package-archives '("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/") t)
 (package-initialize)
 
-
-
-;; Enable Vertico.
-(use-package vertico
-  :init
-  (vertico-mode))
-;; Persist history over Emacs restarts. Vertico sorts by history position.
-(use-package savehist
-  :init
-  (savehist-mode))
-;; Emacs minibuffer configurations.
-(use-package emacs
-  :custom
-  ;; Enable context menu. `vertico-multiform-mode' adds a menu in the minibuffer
-  ;; to switch display modes.
-  (context-menu-mode t)
-  ;; Support opening new minibuffers from inside existing minibuffers.
-  (enable-recursive-minibuffers t)
-  (read-extended-command-predicate #'command-completion-default-include-p)
-  (minibuffer-prompt-properties
-   '(read-only t cursor-intangible t face minibuffer-prompt)))
-
-
 ;; Highlithing mode
 (volatile-highlights-mode 1)
-
-
-
 
 ;; Whitespace mode
 (whitespace-mode 0)
 
 ;; Delete selection mode
 (delete-selection-mode 1)
-
-;; ;; Multiple cursors
-;; (require 'multiple-cursors)
 
 ;; Visual replace
 (require 'visual-replace)
@@ -161,9 +128,10 @@
 ;; Disables beeps
 (setq ring-bell-function 'ignore)
 
-;; Company mode completion
-(global-company-mode)
-(add-hook 'after-init-hook 'global-company-mode)
+;;Ivy completion
+(ivy-mode)
+(setopt search-default-mode #'char-fold-to-regexp)
+
 
 ;; Pulsar
 (pulsar-global-mode 1)
@@ -182,6 +150,22 @@
 ;; Vterm
 (setq vterm-timer-delay 0.01) ;; THE BEST SETTING EVER
 
+;; Corfu completion
+(global-corfu-mode 1)
+
+;; Folding
+(yafolding-mode 1)
+
+;; OPEN MULTIPLE FILES IN DIRED
+(eval-after-load "dired"
+  '(progn
+     (define-key dired-mode-map "F" 'my-dired-find-file)
+     (defun my-dired-find-file (&optional arg)
+       "Open each of the marked files, or the file under the point, or when prefix arg, the next N files "
+       (interactive "P")
+       (let ((fn-list (dired-get-marked-files nil arg)))
+         (mapc 'find-file fn-list)))))
+
 
 ;; END PACKAGES
 
@@ -194,13 +178,12 @@
 ;; Add another completion key-bind
 (put 'upcase-region 'disabled nil)
 
+
+
 ;; Compile key-binding
 (global-set-key (kbd "C-M-c") 'compile)
 
 (global-set-key (kbd "C-a") 'back-to-indentation)
-
-;;Imenu
-(global-set-key (kbd "M-i") 'imenu)
 
 
 ;; Goto line
@@ -210,7 +193,7 @@
 (global-set-key (kbd "C-M-;") 'avy-goto-char)
 
 ;; Multiple cursors
-;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
 ;; Surround
 (global-set-key (kbd "C-q") 'surround-insert)
@@ -227,8 +210,11 @@
 
 ;; Disable show buffers
 (global-unset-key (kbd "C-x C-b"))
+(global-unset-key (kbd "C-x C-d"))
+(global-unset-key (kbd "C-x f"))
 
-;; Crux ---------------------------------------------------------------
+
+;; Crux
 (global-set-key (kbd "C-k") 'crux-smart-kill-line)
 (global-set-key (kbd "C-c s") 'crux-sudo-edit)
 (global-set-key (kbd "C-<return>") 'crux-smart-open-line)
@@ -240,6 +226,14 @@
 (global-set-key (kbd "M-p") (lambda () (interactive) (previous-logical-line) (recenter)))
 (global-set-key (kbd "M-n") (lambda () (interactive) (next-logical-line) (recenter)))
 
-
+;; Vterm
 (global-set-key (kbd "<f1>") 'vterm-toggle)
 
+;; Swiper (better search)
+(global-set-key (kbd "C-s") 'swiper)
+(keymap-global-set "M-x" #'counsel-M-x)
+(keymap-global-set "C-x C-f" #'counsel-find-file)
+(global-set-key (kbd "M-i") 'counsel-imenu)
+
+;; Folding
+(global-set-key (kbd "C-r") 'yafolding-toggle-element)
