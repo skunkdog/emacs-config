@@ -31,11 +31,11 @@
 			 counsel crux dashboard doom-themes eat
 			 ghostel goto-line-preview gruber-darker-theme
 			 gruber-darker-themezz gruvbox-theme helm
-			 indent-guide ivy markdown-mode mono-complete
-			 multiple-cursors nerd-icons nerd-icons-corfu
-			 pdf-tools prism pulsar rainbow-delimiters
-			 recomplete smart-mode-line smartscan
-			 spacemacs-theme surround swiper
+			 indent-guide ivy magit markdown-mode
+			 mono-complete multiple-cursors nerd-icons
+			 nerd-icons-corfu pdf-tools prism pulsar
+			 rainbow-delimiters recomplete smart-mode-line
+			 smartscan spacemacs-theme surround swiper
 			 tab-line-nerd-icons visual-replace
 			 volatile-highlights yafolding yasnippet)))
 
@@ -77,7 +77,10 @@
 
 ;;MELPA
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/") t)
+(setq package-archives
+      '(("gnu"    . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")
+        ("nongnu" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/nongnu/")
+        ("melpa"  . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")))
 (package-initialize)
 
 ;; Highlithing mode
@@ -100,7 +103,7 @@
 (electric-pair-mode 1)
 
 ;; Set default compile command
-(setq compile-command "clang *.c -o out -Wall -Wextra -pedantic -g -O0") ;; All warnings, no optimization, puts error if there is unfreed memory.
+(setq compile-command "clang *.c -o out -Wall -Wextra -pedantic -g -O0") ;; All warnings, no optimization.
 
 ;;Tab bar
 (global-tab-line-mode 1)
@@ -121,7 +124,6 @@
     (delete-window (get-buffer-window (get-buffer "*compilation*"))))
   ;; Always return the anticipated result of compilation-exit-message-function
   (cons msg code))
-;; Specify my function (maybe I should have done a lambda function)
 (setq compilation-exit-message-function 'compilation-exit-autoclose)
 
 
