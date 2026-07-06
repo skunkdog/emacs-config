@@ -5,7 +5,7 @@
 - **gruber-darker-theme**, **gruber-darker-themezz**, **gruvbox-theme**, **spacemacs-theme** — additional theme options
 - **smart-mode-line** — modeline styling (`sml/setup`)
 - **pulsar** — subtle UI pulse effects
-- **dimmer** — dim inactive windows/buffers
+- **dimmer** — dim inactive windows/buffers (Disabled because of the bag in new version)
 - **tab-line-nerd-icons** + **nerd-icons** — icon tab line (`tab-line-nerd-icons-global-mode`)
 - **volatile-highlights** — highlight recent changes/yanks
 
