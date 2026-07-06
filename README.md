@@ -1,57 +1,66 @@
 # My emacs configuration made with simplicity in mind.
-# Packages:
-## UI / Look & Feel
+## Packages
+### UI / Look & Feel
 - **doom-themes** — theme support
 - **gruber-darker-theme**, **gruber-darker-themezz**, **gruvbox-theme**, **spacemacs-theme** — additional theme options
-- **smart-mode-line** — modeline styling (`sml/setup`)
+- **smart-mode-line** — modeline styling (`sml/theme 'respectful`, `sml/setup`)
 - **pulsar** — subtle UI pulse effects
-- **dimmer** — dim inactive windows/buffers (Disabled because of the bag in new version)
-- **tab-line-nerd-icons** + **nerd-icons** — icon tab line (`tab-line-nerd-icons-global-mode`)
+- **nerd-icons** — icon support (tab-line icons)
 - **volatile-highlights** — highlight recent changes/yanks
 
-## Completion / Minibuffer UX
-- **vertico** — completion UI in minibuffer
+### Completion / Minibuffer UX
+- **ivy** — completion UI in minibuffer (`ivy-mode`)
+- **corfu** — completion UI (`global-corfu-mode 1`)
+- **mono-complete** — monospace completion support/assets
 
-## Editing Enhancements
-- **visual-replace** — live visual replace (`visual-replace-global-mode`)
-- **surround** — surround editing (also keybound)
-- **yasnippet** — snippet expansion (global)
-- **crux** — extra editing commands (also keybound)
+### Editing Enhancements
+- **visual-replace** — live visual replace (`visual-replace-global-mode 1`)
+- **surround** — surround editing (keybound)
+- **yasnippet** — snippet expansion (`yas-global-mode 1`)
+
+### Navigation / Editing Helpers
+- **crux** — extra editing commands (keybound)
 - **avy** — fast navigation to visible chars
 - **goto-line-preview** — enhanced goto-line experience
-- **rainbow-delimiters** — delimiter coloring
-- **indent-guide** — indent guides
-- **smartscan** — scanning/highlighting support
-- **prism** — syntax highlighting enhancements
-- **mono-complete** — monospace completion support/assets
-- **electric-pair-mode** (built-in) — auto-pairs
 
-## Programming / Coding Helpers
-- **company** — code completion backend/UI (`global-company-mode`)
-- **auto-complete-clang**, **auto-complete-clang-async** — clang-specific completion (present/installed)
+### Folding
+- **yafolding** — code folding (`yafolding-mode 1`, toggle element `C-r`)
+
+### Tabs / Tab Line
+- **tab-line-nerd-icons** — tab line UI (enabled via `global-tab-line-mode 1` + `tab-line-nerd-icons-global-mode`)
+- **tab-line** (built-in UI) — tab bar behavior (`tab-line-close-button-show 1`)
+
+### Programming / Coding Helpers
+- **auto-complete-clang**, **auto-complete-clang-async** — clang-specific completion (present/installed in packages list)
 - **recomplete** — present/installed (completion-related)
-- **smart-mode-line** (already above) — used while coding
 
-## Terminal / Integrated Tools
-- **vterm** — toggleable terminal (`<f1>` → `vterm-toggle`)
+### Terminal / Integrated Tools
+- **vterm** — toggleable terminal (`<f1>` → `vterm-toggle`, `vterm-timer-delay 0.01`)
 
-## Performance / Runtime
+### Performance / Runtime
 - **gcmh** — garbage collection tuning (`gcmh-mode 1`)
-# Custom keybindings
+
+## Custom keybindings
 
 ### Window / navigation
 - `M-o` → `other-window`
-- `M-i` → `imenu`
+- `M-i` → `counsel-imenu`
+- `C-M-;` → `avy-goto-char`
+
+### Completion / search / commands
+- `C-s` → `swiper`
+- `M-x` → `counsel-M-x`
+- `C-x C-f` → `counsel-find-file`
+
+### Goto line / navigation
 - `M-g M-g` → `goto-line-preview`
-- `M-p` → previous logical line + recenter
-- `M-n` → next logical line + recenter
 
 ### Completion / compile
 - `C-M-c` → `compile`
 - `C-a` → `back-to-indentation`
 
-### Jump
-- `C-M-;` → `avy-goto-char`
+### Multiple cursors
+- `C-S-c C-S-c` → `mc/edit-lines`
 
 ### Surround editing
 - `C-q` → `surround-insert`
@@ -64,17 +73,24 @@
 ### Tabs
 - `M-l` → `tab-line-switch-to-next-tab`
 - `M-h` → `tab-line-switch-to-prev-tab`
-
-### Dired / buffer list behavior
-- `C-x C-b` → (unset) (disable show buffers)
-
+  
 ### Crux (extra commands)
 - `C-k` → `crux-smart-kill-line`
 - `C-c s` → `crux-sudo-edit`
 - `C-<return>` → `crux-smart-open-line`
 
+### Dired keybinding
+- `dired` → `F` runs `my-dired-find-file` (opens marked/point file(s))
+
+### Folding
+- `C-r` → `yafolding-toggle-element`
+
 ### Terminal
 - `<f1>` → `vterm-toggle`
 
-### Minor notes (not a keybindings, but a keymap-related tweak)
-- `(put 'upcase-region 'disabled nil)` enables `upcase-region` behavior by un-disabling it.
+### Minor notes (config tweaks)
+- Deletes selected text if you start typing: `delete-selection-mode 1`
+- Relative line numbers: `display-line-numbers-type 'relative`
+- Menu/tool bar + scroll bar disabled
+- Compile command: `clang *.c -o out -Wall -Wextra -pedantic -g -O0`
+- Compilation window auto-closes on success (via `compilation-exit-autoclose`)
