@@ -1,6 +1,5 @@
 # My emacs configuration made with simplicity in mind.
-![screenshot1](screenshots/screenshot1.png)
-![screenshot2](screenshots/screenshot2.png)
+![screenshot1](screenshots/screenshot1.png) 
 ## Packages:
 ### UI / Look & Feel
 - **doom-themes** — theme support
