@@ -1,245 +1,282 @@
-;;-*- lexical-binding: t; -*-
-;;     ▄▖    ▜               
-;;     ▌ ▛▌▛▌▐ ▀▌▛▘▛▘        
-;;     ▙▖▙▌▙▌▐▖█▌▄▌▄▌
+;; -*- lexical-binding: t; -*-
 
-;;                    ▐▘▘    
-;; █▌▛▛▌▀▌▛▘▛▘  ▛▘▛▌▛▌▜▘▌▛▌  
-;; ▙▖▌▌▌█▌▙▖▄▌  ▙▖▙▌▌▌▐ ▌▙▌  
-;;                       ▄▌   
+;; ▄▖▄▖▖ ▖▄▖▄▖▄▖▖ 
+;; ▌ ▙▖▛▖▌▙▖▙▘▌▌▌ 
+;; ▙▌▙▖▌▝▌▙▖▌▌▛▌▙▖general
+
+;; Use-package
+(eval-when-compile
+  (require 'use-package))
+
+;; Straight.el
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
 
+;; Garbage colection
+(use-package gcmh
+  :straight t
+  :config
+  (gcmh-mode 1)
+  )
 
-;; Themes
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(auth-source-save-behavior nil)
- '(custom-enabled-themes '(doom-badger))
- '(custom-safe-themes t)
- '(package-selected-packages
-   '(auto-complete-clang auto-complete-clang-async avy buttercup corfu
-			 counsel crux dashboard doom-themes eat
-			 ghostel goto-line-preview gruber-darker-theme
-			 gruber-darker-themezz gruvbox-theme helm
-			 indent-guide ivy magit markdown-mode
-			 minimal-dashboard mono-complete
-			 multiple-cursors nerd-icons nerd-icons-corfu
-			 prism pulsar rainbow-delimiters recomplete
-			 smart-mode-line smartscan spacemacs-theme
-			 surround swiper tab-line-nerd-icons
-			 visual-replace volatile-highlights yafolding
-			 yasnippet zig-mode)))
+;; Disables beeps
+(setq ring-bell-function 'ignore)
 
-;; Setting fonts
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Iosevka" :foundry "UKWN" :slant normal :weight medium :height 150 :width normal)))))
+;; Add a key in dired mode
+(put 'dired-find-alternate-file 'disabled nil)
+
+;; Vterm
+(use-package vterm
+  :straight t
+  :config
+  (setq vterm-timer-delay 0.01)
+  )
+
+(use-package vterm-toggle
+  :straight t
+  :config
+  (global-set-key (kbd "<f1>") 'vterm-toggle)
+  )
+
+;; ▖▖▄▖
+;; ▌▌▐ 
+;; ▙▌▟▖ ui
+
+;; Theme
+(use-package doom-themes
+  :straight t
+  :config
+  (load-theme 'doom-gruvbox t)
+  )
+;; Font
+(set-frame-font "-UKWN-Aporetic Sans Mono-bold-normal-normal-*-17-*-*-*-m-0-iso10646-1")
 
 ;; Disable menu and tool bar
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 
-
-;; Winner mode
-(winner-mode 1)
-
 ;; Display line numbers
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
-;; Relative numbers
-(setq display-line-numbers-type 'relative)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode) ;; Lines only in programming
+(setq display-line-numbers-type 'relative) ;; Relative
 
 ;; Disable scroll bar
-(scroll-bar-mode -1)
-
-;; Treat CamelCase as separate words
-(global-subword-mode 1)
-
-;; Disable absolutely STUPID error if your line is bigger than 60 simbols AHAHAHAHAHHAHAHAHAHAHAHHAHAHAHAHHAHAHAHAHAHAHHAHAHA
-(setq whitespace-line-column 9999)
-
-;;Delete selected text if started typing
-(setq delete-selection-mode 1)
+(scroll-bar-mode 0)
 
 ;; Highlight current line
 (global-hl-line-mode 1)
 
-;;MELPA
-(require 'package)
-(setq package-archives
-      '(("gnu"    . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")
-        ("nongnu" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/nongnu/")
-        ("melpa"  . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")))
-(package-initialize)
+;; Nerd icons
+(use-package nerd-icons
+  :straight t
+  )
 
-;; Highlithing mode
-(volatile-highlights-mode 1)
+;; Tab-line bar
+(use-package tab-line-nerd-icons
+  :straight t
+  :init
+  (global-tab-line-mode 1)
+  
+  (global-set-key (kbd "M-l") 'tab-line-switch-to-next-tab)
+  (global-set-key (kbd "M-h") 'tab-line-switch-to-prev-tab)
+  
+  :config
+  (tab-line-nerd-icons-global-mode) ;; Enable emojies
+)
 
-;; Whitespace mode
-(whitespace-mode 0)
+(use-package nyan-mode
+  :straight t
+  :init
+  (setq mode-line-format
+	(list
+       '(:eval (list (nyan-create)))
+       ))
+  (setq nyan-animate-nyancat t)
+  :config
+  (nyan-mode 1)
+  )
 
-;; Delete selection mode
+(use-package minimal-dashboard
+  :straight t
+  :config
+  (setq initial-buffer-choice #'minimal-dashboard)
+  (setq server-client-instructions nil)
+  )
+
+;; ▄▖▄▖▄ ▄▖▖ ▖▄▖
+;; ▌ ▌▌▌▌▐ ▛▖▌▌ 
+;; ▙▖▙▌▙▘▟▖▌▝▌▙▌coding
+             
+
+;; Treat CamelCase as separate words
+(global-subword-mode 1)
+
+;;Delete selected text if started typing
 (delete-selection-mode 1)
 
-;; Visual replace
-(require 'visual-replace)
-(visual-replace-global-mode 1)
-
-;; Surround.el
-(require 'surround)
-
-;; Auto close
+;; Auto pair
 (electric-pair-mode 1)
 
 ;; Set default compile command
-(setq compile-command "clang *.c -o out -Wall -Wextra -pedantic -g -O0") ;; All warnings, no optimization.
+(setq compile-command "clang *.c -o out -Wall -Wextra -pedantic -g -O0") ;; All warnings, no optimization, debugging.
 
-;;Tab bar
-(global-tab-line-mode 1)
-(setq tab-line-close-button-show 1)  ;; do not show close button
-(tab-line-nerd-icons-global-mode)
-
-;; Nerd icons
-(require 'nerd-icons)
-
-;; Helper for compilation. Close the compilation window if
-;; there was no error at all. (emacs wiki)
-(defun compilation-exit-autoclose (status code msg)
-  ;; If M-x compile exists with a 0
-  (when (and (eq status 'exit) (zerop code))
-    ;; then bury the *compilation* buffer, so that C-x b doesn't go there
-    (bury-buffer)
-    ;; and delete the *compilation* window
-    (delete-window (get-buffer-window (get-buffer "*compilation*"))))
-  ;; Always return the anticipated result of compilation-exit-message-function
-  (cons msg code))
-(setq compilation-exit-message-function 'compilation-exit-autoclose)
-
-
-;; Disables beeps
-(setq ring-bell-function 'ignore)
-
-;;Ivy completion
-(ivy-mode)
-(setopt search-default-mode #'char-fold-to-regexp)
-
-
-;; Pulsar
-(pulsar-global-mode 1)
-
-;; Garbage collection
-(gcmh-mode 1)
-
-;; Modline
-(setq sml/theme 'respectful)
-(sml/setup)
-
-;; Snippets
-(yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
-(yas-global-mode)
-
-;; Vterm
-(setq vterm-timer-delay 0.01) ;; THE BEST SETTING EVER
-
-;; Corfu completion
-(global-corfu-mode 1)
-
-;; Folding
-(yafolding-mode 1)
-
-;; OPEN MULTIPLE FILES IN DIRED
-(eval-after-load "dired"
-  '(progn
-     (define-key dired-mode-map "F" 'my-dired-find-file)
-     (defun my-dired-find-file (&optional arg)
-       "Open each of the marked files, or the file under the point, or when prefix arg, the next N files "
-       (interactive "P")
-       (let ((fn-list (dired-get-marked-files nil arg)))
-         (mapc 'find-file fn-list)))))
-
-
-;; Display time
-(display-time-mode)
-
-;;Minimal dashboard
-(setq initial-buffer-choice #'minimal-dashboard) ;; set initial buffer as dashboard
-
-;; Disable them :(
-(setq server-client-instructions nil)
-
-
-;; END PACKAGES
-
-;;----------------------KEYBINDINGS---------------------------------------------------------
-
-;;__________________GENERAL KEYBINDINGS___________________________
-;;Moving between windows
-(global-set-key (kbd "M-o") 'other-window)
-
-;; Add another completion key-bind
-(put 'upcase-region 'disabled nil)
-
-
-
-;; Compile key-binding
-(global-set-key (kbd "C-M-c") 'compile)
-
-(global-set-key (kbd "C-a") 'back-to-indentation)
-
-
-;; Goto line
-(global-set-key (kbd "M-g M-g") 'goto-line-preview)
-
-;; avy
-(global-set-key (kbd "C-M-;") 'avy-goto-char)
-
-;; Multiple cursors
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; Visual replace
+(use-package visual-replace
+  :straight t
+  :config
+  (visual-replace-global-mode 1)
+  )
 
 ;; Surround
-(global-set-key (kbd "C-q") 'surround-insert)
-(global-set-key (kbd "C-S-q") 'surround-change)
+(use-package surround
+  :straight t
+  :config
+  (global-set-key (kbd "C-q") 'surround-insert)
+  (global-set-key (kbd "C-M-q") 'surround-change)
+  )
+
+;; YASsnippets
+(use-package yasnippet
+  :straight t
+  :config
+  (yas-global-mode 1)
+  )
+(use-package yasnippet-snippets
+  :straight t
+)
+
+(use-package yafolding
+  :straight t
+  :config
+  (yafolding-mode 1)
+  (global-set-key (kbd "C-r") 'yafolding-toggle-element)
+  )
+
+(use-package goto-line-preview
+  :straight t
+  :config
+  (global-set-key (kbd "M-g M-g") 'goto-line-preview)
+  )
+
+(use-package multiple-cursors
+  :straight t
+  :config
+  (global-set-key (kbd "M-c") 'mc/edit-lines)
+  )
+
+
+(use-package swiper
+  :straight t
+  :config
+  (global-set-key (kbd "C-s") 'swiper)
+  )
+
+(use-package magit
+  :straight t
+  yy)
+;; ▄▖▄▖▖  ▖▄▖▖ ▄▖▄▖▄▖▄▖▖ ▖
+;; ▌ ▌▌▛▖▞▌▙▌▌ ▙▖▐ ▐ ▌▌▛▖▌
+;; ▙▖▙▌▌▝ ▌▌ ▙▖▙▖▐ ▟▖▙▌▌▝▌completion
+
+;; Enable Vertico.
+(use-package vertico
+  :straight t
+  :init
+  (vertico-mode))
+;; Emacs minibuffer configurations.
+(use-package emacs
+  :custom
+  ;; Enable context menu. `vertico-multiform-mode' adds a menu in the minibuffer
+  ;; to switch display modes.
+  (context-menu-mode t)
+  ;; Support opening new minibuffers from inside existing minibuffers.
+  (enable-recursive-minibuffers t)
+  ;; Hide commands in M-x which do not work in the current mode.  Vertico
+  ;; commands are hidden in normal buffers. This setting is useful beyond
+  ;; Vertico.
+  (read-extended-command-predicate #'command-completion-default-include-p)
+  ;; Do not allow the cursor in the minibuffer prompt
+  (minibuffer-prompt-properties
+   '(read-only t cursor-intangible t face minibuffer-prompt)))
+;; Optionally use the `orderless' completion style.
+(use-package orderless
+  :straight t
+  :custom
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch))
+  ;; (orderless-component-separator #'orderless-escapable-split-on-space)
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles partial-completion))))
+  (completion-category-defaults nil) ;; Disable defaults, use our settings
+  (completion-pcm-leading-wildcard t)) ;; Emacs 31: partial-completion behaves like substring
+;; Enable rich annotations using the Marginalia package
+(use-package marginalia
+  :straight t
+  :init
+  (marginalia-mode))
+;; Consult users will also want the embark-consult package.
+(use-package embark-consult
+  :straight t) ; only need to install it, embark loads it after consult if found
+(use-package corfu
+  :straight t
+  :config
+  (global-corfu-mode 1)
+  )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("9b21c848d09ba7df8af217438797336ac99cbbbc87a08dc879e9291673a6a631"
+     default)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; ▖▖▄▖▖▖  ▄ ▄▖▖ ▖▄ ▄▖▖ ▖▄▖▄▖
+;; ▙▘▙▖▌▌▄▖▙▘▐ ▛▖▌▌▌▐ ▛▖▌▌ ▚ 
+;; ▌▌▙▖▐   ▙▘▟▖▌▝▌▙▘▟▖▌▝▌▙▌▄▌
+
+;; Other window
+(global-set-key (kbd "M-o") 'other-window)
+
+;; Compile
+(global-set-key (kbd "C-M-c") 'compile)
+
+;; Not to the start of the line but to indentatation
+(global-set-key (kbd "C-a") 'back-to-indentation)
 
 ;; Delete current buffer
 (global-unset-key (kbd "C-z"))
 (global-set-key (kbd "C-z C-k") 'kill-current-buffer)
 (global-set-key (kbd "C-z M-k") 'kill-buffer-and-window)
 
-;; Switch to next tab
-(global-set-key (kbd "M-l") 'tab-line-switch-to-next-tab)
-(global-set-key (kbd "M-h") 'tab-line-switch-to-prev-tab)
 
-;; Disable show buffers
+;; Disable unnesesary functions
 (global-unset-key (kbd "C-x C-b"))
 (global-unset-key (kbd "C-x C-d"))
 (global-unset-key (kbd "C-x f"))
 
-
-;; Crux
-(global-set-key (kbd "C-k") 'crux-smart-kill-line)
-(global-set-key (kbd "C-c s") 'crux-sudo-edit)
-(global-set-key (kbd "C-<return>") 'crux-smart-open-line)
-
-;;Dired keybindings
-(put 'dired-find-alternate-file 'disabled nil)
-
-;; My really usefull keybinding
+;; Comfortable reading through code
 (global-set-key (kbd "M-p") (lambda () (interactive) (previous-logical-line) (recenter)))
 (global-set-key (kbd "M-n") (lambda () (interactive) (next-logical-line) (recenter)))
 
-;; Vterm
-(global-set-key (kbd "<f1>") 'vterm-toggle)
 
-;; Swiper (better search)
-(global-set-key (kbd "C-s") 'swiper)
-(keymap-global-set "M-x" #'counsel-M-x)
-(keymap-global-set "C-x C-f" #'counsel-find-file)
-(global-set-key (kbd "M-i") 'counsel-imenu)
 
-;; Folding
-(global-set-key (kbd "C-r") 'yafolding-toggle-element)
