@@ -297,7 +297,6 @@
 
 
 ;; Disable unnesesary functions
-(global-unset-key (kbd "C-x C-b"))
 (global-unset-key (kbd "C-x C-d"))
 (global-unset-key (kbd "C-x f"))
 
@@ -305,3 +304,5 @@
 (global-set-key (kbd "M-p") (lambda () (interactive) (previous-logical-line) (recenter)))
 (global-set-key (kbd "M-n") (lambda () (interactive) (next-logical-line) (recenter)))
 
+;; Ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
