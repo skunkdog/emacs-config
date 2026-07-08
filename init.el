@@ -1,20 +1,13 @@
 ;;-*- lexical-binding: t; -*-
-;;     ▄▖    ▜                     ▄▖    ▜  
-;;     ▌ ▛▌▛▌▐ ▀▌▛▘▛▘              ▌ ▛▌▛▌▐ ▀▌▛▘▛▘
-;;     ▙▖▙▌▙▌▐▖█▌▄▌▄▌              ▙▖▙▌▙▌▐▖█▌▄▌▄▌
+;;     ▄▖    ▜               
+;;     ▌ ▛▌▛▌▐ ▀▌▛▘▛▘        
+;;     ▙▖▙▌▙▌▐▖█▌▄▌▄▌
 
-;;                    ▐▘▘                         ▐▘▘
-;; █▌▛▛▌▀▌▛▘▛▘  ▛▘▛▌▛▌▜▘▌▛▌    █▌▛▛▌▀▌▛▘▛▘  ▛▘▛▌▛▌▜▘▌▛▌
-;; ▙▖▌▌▌█▌▙▖▄▌  ▙▖▙▌▌▌▐ ▌▙▌    ▙▖▌▌▌█▌▙▖▄▌  ▙▖▙▌▌▌▐ ▌▙▌
-;;                       ▄▌                          ▄▌
+;;                    ▐▘▘    
+;; █▌▛▛▌▀▌▛▘▛▘  ▛▘▛▌▛▌▜▘▌▛▌  
+;; ▙▖▌▌▌█▌▙▖▄▌  ▙▖▙▌▌▌▐ ▌▙▌  
+;;                       ▄▌   
 
-
-;; CUSTOM FUNCTIONS
-;; Testing function
-(defun the-best-window-manager()
-  (interactive)
-  (insert "i3wm")
-  )
 
 
 ;; Themes
@@ -32,12 +25,13 @@
 			 ghostel goto-line-preview gruber-darker-theme
 			 gruber-darker-themezz gruvbox-theme helm
 			 indent-guide ivy magit markdown-mode
-			 mono-complete multiple-cursors nerd-icons
-			 nerd-icons-corfu pdf-tools prism pulsar
-			 rainbow-delimiters recomplete smart-mode-line
-			 smartscan spacemacs-theme surround swiper
-			 tab-line-nerd-icons visual-replace
-			 volatile-highlights yafolding yasnippet)))
+			 minimal-dashboard mono-complete
+			 multiple-cursors nerd-icons nerd-icons-corfu
+			 prism pulsar rainbow-delimiters recomplete
+			 smart-mode-line smartscan spacemacs-theme
+			 surround swiper tab-line-nerd-icons
+			 visual-replace volatile-highlights yafolding
+			 yasnippet zig-mode)))
 
 ;; Setting fonts
 (custom-set-faces
@@ -56,7 +50,7 @@
 (winner-mode 1)
 
 ;; Display line numbers
-(global-display-line-numbers-mode 1)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 ;; Relative numbers
 (setq display-line-numbers-type 'relative)
 
@@ -167,6 +161,16 @@
        (interactive "P")
        (let ((fn-list (dired-get-marked-files nil arg)))
          (mapc 'find-file fn-list)))))
+
+
+;; Display time
+(display-time-mode)
+
+;;Minimal dashboard
+(setq initial-buffer-choice #'minimal-dashboard) ;; set initial buffer as dashboard
+
+;; Disable them :(
+(setq server-client-instructions nil)
 
 
 ;; END PACKAGES
