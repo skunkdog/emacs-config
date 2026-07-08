@@ -4,29 +4,29 @@
 ### UI / Look & Feel
 - **doom-themes** — theme support
 - **gruber-darker-theme**, **gruber-darker-themezz**, **gruvbox-theme**, **spacemacs-theme** — additional theme options
-- **smart-mode-line** — modeline styling (`sml/theme 'respectful`, `sml/setup`)
+- **smart-mode-line** — modeline styling
 - **pulsar** — subtle UI pulse effects
 - **nerd-icons** (+ **nerd-icons-corfu**) — icon support (tab line icons)
 - **minimal-dashboard** — minimal dashboard UI
 - **volatile-highlights** — highlight recent changes/yanks
-- **display-time** (built-in) — show current time (`display-time-mode`)
+- **display-time** (built-in) — show current time 
 
 ### Completion / Minibuffer UX
-- **ivy** — completion UI in minibuffer (`ivy-mode`, `search-default-mode #'char-fold-to-regexp`)
-- **corfu** — completion UI (`global-corfu-mode 1`)
+- **ivy** — completion UI in minibuffer
+- **corfu** — completion UI 
 - **mono-complete** — monospace completion support/assets
 - **zig-mode** — Zig language support
 
 ### Editing Enhancements
-- **visual-replace** — live visual replace (`visual-replace-global-mode 1`)
+- **visual-replace** — live visual replace 
 - **surround** — surround editing (keybound)
-- **yasnippet** — snippet expansion (`yas-global-mode 1`)
+- **yasnippet** — snippet expansion 
 
 ### Navigation / Editing Helpers
 - **crux** — extra editing commands (keybound)
 - **avy** — fast navigation to visible chars
 - **goto-line-preview** — enhanced goto-line experience
-- **multiple-cursors** — multi-cursor editing (`mc/edit-lines`)
+- **multiple-cursors** — multi-cursor editing 
 
 ### Language / Programming
 - **prism** — syntax highlighting enhancements
@@ -36,17 +36,17 @@
 - **zig-mode** — Zig editing
 
 ### Terminal / Integrated Tools
-- **vterm** — toggleable terminal (`<f1>` → `vterm-toggle`, `vterm-timer-delay 0.01`)
+- **vterm** — toggleable terminal
 
 ### Tabs / Tab Line
-- **tab-line-nerd-icons** — tab line UI (`global-tab-line-mode 1` + `tab-line-nerd-icons-global-mode`)
+- **tab-line-nerd-icons** — tab line UI 
 
 ### Folding
-- **yafolding** — code folding (`yafolding-mode 1`, toggle element `C-r`)
+- **yafolding** — code folding 
 
 ### Performance / Runtime
-- **gcmh** — garbage collection tuning (`gcmh-mode 1`)
-- **winner-mode** (built-in) — window history management (`winner-mode 1`)
+- **gcmh** — garbage collection tuning 
+- **winner-mode** (built-in) — window history management
 
 ## Custom keybindings
 
