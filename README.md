@@ -10,12 +10,12 @@
 * Nyan mode (Cute :3)
 * Minimal dashboard
 ##### Coding:
-* Visual replace - replace visualy
-* Surround
-* Yasnippet - use snippets to automate presets in coding.
-* Yafolding - fold S-expresions
-* Goto line preview
-* Multiple cursors
+* Visual replace - replace visualy (M-%)
+* Surround (C-q - insert) (C-M-q - change)
+* Yasnippet - use snippets to automate presets in coding. (Press tab to expand snippets)
+* Yafolding - fold S-expresions (C-r)
+* Goto line preview (M-g M-g)
+* Multiple cursors (M-c)
 * Magit - Tui for git
 ##### Completion frameworks:
 * Vertico
