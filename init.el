@@ -5,6 +5,10 @@
 ;; ▌ ▙▖▛▖▌▙▖▙▘▌▌▌ 
 ;; ▙▌▙▖▌▝▌▙▖▌▌▛▌▙▖general
 
+;; Separate custom.el file
+(setq custom-file (locate-user-emacs-file "custom.el"))
+(load custom-file :no-error-if-file-is-missing)
+
 ;; Use-package
 (eval-when-compile
   (require 'use-package))
@@ -88,8 +92,9 @@
   :config
   (load-theme 'doom-gruvbox t)
   )
+
 ;; Font
-(set-frame-font "-UKWN-Aporetic Sans Mono-bold-normal-normal-*-17-*-*-*-m-0-iso10646-1")
+(set-frame-font "-UKWN-Aporetic Sans Mono-bold-normal-normal-*-17-*-*-*-m-0-iso10646-1" nil t)
 
 ;; Disable menu and tool bar
 (menu-bar-mode 0)
@@ -254,28 +259,11 @@
   :straight t
   :init
   (marginalia-mode))
-;; Consult users will also want the embark-consult package.
-(use-package embark-consult
-  :straight t) ; only need to install it, embark loads it after consult if found
 (use-package corfu
   :straight t
   :config
   (global-corfu-mode 1)
   )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("9b21c848d09ba7df8af217438797336ac99cbbbc87a08dc879e9291673a6a631"
-     default)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; ▖▖▄▖▖▖  ▄ ▄▖▖ ▖▄ ▄▖▖ ▖▄▖▄▖
 ;; ▙▘▙▖▌▌▄▖▙▘▐ ▛▖▌▌▌▐ ▛▖▌▌ ▚ 
