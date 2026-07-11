@@ -7,7 +7,8 @@
 
 ;; Separate custom.el file
 (setq custom-file (locate-user-emacs-file "custom.el"))
-(load custom-file :no-error-if-file-is-missing)
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Use-package
 (eval-when-compile
@@ -30,7 +31,6 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-
 ;; Garbage colection
 (use-package gcmh
   :straight t
@@ -43,13 +43,10 @@
   :straight t
   :init
   (setq load-prefer-newer t)
-  
   :config
   (setq compile-angel-verbose t)
-
   ;; Uncomment the line below to compile automatically when an Elisp file is saved
   (add-hook 'emacs-lisp-mode-hook #'compile-angel-on-save-local-mode) 
-
   ;; The following directive prevents compile-angel from compiling your init
   ;; files. If you choose to remove this push to `compile-angel-excluded-path-suffixes'
   ;; and compile your pre/post-init files, ensure you understand the
@@ -58,10 +55,10 @@
   ;; at the top of your init file.
   ;;(push "/init.el" compile-angel-excluded-path-suffixes)
   (push "/early-init.el" compile-angel-excluded-path-suffixes)
-
   ;; A global mode that compiles .el files when they are loaded
   ;; using `load' or `require'.
-  (compile-angel-on-save-mode 1))
+  (compile-angel-on-save-mode 1)
+  )
 
 ;; Disables beeps
 (setq ring-bell-function 'ignore)
@@ -75,25 +72,24 @@
   :config
   (setq vterm-timer-delay 0.01)
   )
-
 (use-package vterm-toggle
   :straight t
   :config
   (global-set-key (kbd "<f1>") 'vterm-toggle)
   )
 
+
 ;; ▖▖▄▖
 ;; ▌▌▐ 
 ;; ▙▌▟▖ ui
 
 ;; Theme
-(use-package doom-themes
+(use-package gruber-darker-theme
   :straight t
-  :config
-  (load-theme 'doom-gruvbox t)
   )
 
 ;; Font
+(add-to-list 'default-frame-alist '(font . "-UKWN-Aporetic Sans Mono-bold-normal-normal-*-17-*-*-*-m-0-iso10646-1"))
 (set-frame-font "-UKWN-Aporetic Sans Mono-bold-normal-normal-*-17-*-*-*-m-0-iso10646-1" nil t)
 
 ;; Disable menu and tool bar
@@ -115,18 +111,18 @@
   :straight t
   )
 
-;; Tab-line bar
-(use-package tab-line-nerd-icons
-  :straight t
-  :init
-  (global-tab-line-mode 1)
+;; ;; Tab-line bar
+;; (use-package tab-line-nerd-icons
+;;   :straight t
+;;   :init
+;;   (global-tab-line-mode 1)
   
-  (global-set-key (kbd "M-l") 'tab-line-switch-to-next-tab)
-  (global-set-key (kbd "M-h") 'tab-line-switch-to-prev-tab)
+;;   (global-set-key (kbd "M-l") 'tab-line-switch-to-next-tab)
+;;   (global-set-key (kbd "M-h") 'tab-line-switch-to-prev-tab)
   
-  :config
-  (tab-line-nerd-icons-global-mode) ;; Enable emojies
-)
+;;   :config
+;;   (tab-line-nerd-icons-global-mode) ;; Enable emojies
+;;   )
 
 (use-package nyan-mode
   :straight t
@@ -147,22 +143,21 @@
   (setq server-client-instructions nil)
   )
 
+(use-package dimmer
+  :straight t
+  :config
+  (dimmer-mode 1)
+  )
+
+
 ;; ▄▖▄▖▄ ▄▖▖ ▖▄▖
 ;; ▌ ▌▌▌▌▐ ▛▖▌▌ 
 ;; ▙▖▙▌▙▘▟▖▌▝▌▙▌coding
-             
 
-;; Treat CamelCase as separate words
-(global-subword-mode 1)
+(use-package god-mode
+  :straight t
+  )
 
-;;Delete selected text if started typing
-(delete-selection-mode 1)
-
-;; Auto pair
-(electric-pair-mode 1)
-
-;; Set default compile command
-(setq compile-command "clang *.c -o out -Wall -Wextra -pedantic -g -O0") ;; All warnings, no optimization, debugging.
 
 ;; Visual replace
 (use-package visual-replace
@@ -208,7 +203,6 @@
   (global-set-key (kbd "M-c") 'mc/edit-lines)
   )
 
-
 (use-package swiper
   :straight t
   :config
@@ -217,7 +211,20 @@
 
 (use-package magit
   :straight t
-)
+  )
+
+
+;; Treat CamelCase as separate words
+(global-subword-mode 1)
+
+;;Delete selected text if started typing
+(delete-selection-mode 1)
+
+;; Auto pair
+(electric-pair-mode 1)
+
+;; Set default compile command
+(setq compile-command "clang *.c -o out -Wall -Wextra -pedantic -g -O0") ;; All warnings, no optimization, debugging.
 
 ;; ▄▖▄▖▖  ▖▄▖▖ ▄▖▄▖▄▖▄▖▖ ▖
 ;; ▌ ▌▌▛▖▞▌▙▌▌ ▙▖▐ ▐ ▌▌▛▖▌
@@ -259,6 +266,7 @@
   :straight t
   :init
   (marginalia-mode))
+
 (use-package corfu
   :straight t
   :config
@@ -283,7 +291,6 @@
 (global-set-key (kbd "C-z C-k") 'kill-current-buffer)
 (global-set-key (kbd "C-z M-k") 'kill-buffer-and-window)
 
-
 ;; Disable unnesesary functions
 (global-unset-key (kbd "C-x C-d"))
 (global-unset-key (kbd "C-x f"))
@@ -291,6 +298,12 @@
 ;; Comfortable reading through code
 (global-set-key (kbd "M-p") (lambda () (interactive) (previous-logical-line) (recenter)))
 (global-set-key (kbd "M-n") (lambda () (interactive) (next-logical-line) (recenter)))
+(global-set-key (kbd "M-[") (lambda () (interactive) (backward-paragraph) (recenter)))
+(global-set-key (kbd "M-]") (lambda () (interactive) (forward-paragraph) (recenter)))
 
 ;; Ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; Imenu
+(global-set-key (kbd "M-i") 'imenu)
+
