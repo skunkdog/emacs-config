@@ -5,11 +5,6 @@
 ;; ▌ ▙▖▛▖▌▙▖▙▘▌▌▌ 
 ;; ▙▌▙▖▌▝▌▙▖▌▌▛▌▙▖general
 
-;; Separate custom.el file
-(setq custom-file (locate-user-emacs-file "custom.el"))
-(when (file-exists-p custom-file)
-  (load custom-file))
-
 ;; Use-package
 (eval-when-compile
   (require 'use-package))
@@ -73,12 +68,15 @@
   (setq vterm-timer-delay 0.01)
   )
 (use-package vterm-toggle
-  :straight t
+    :straight t
   :config
   (global-set-key (kbd "<f1>") 'vterm-toggle)
   )
 
-
+;; Crux
+(use-package crux
+  :straight t
+  )
 ;; ▖▖▄▖
 ;; ▌▌▐ 
 ;; ▙▌▟▖ ui
@@ -264,7 +262,7 @@
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
   :straight t
-  :init
+  :config
   (marginalia-mode))
 
 (use-package corfu
@@ -272,6 +270,12 @@
   :config
   (global-corfu-mode 1)
   )
+
+;; Custom file
+;; Separate custom.el file
+(setq custom-file (locate-user-emacs-file "custom.el"))
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; ▖▖▄▖▖▖  ▄ ▄▖▖ ▖▄ ▄▖▖ ▖▄▖▄▖
 ;; ▙▘▙▖▌▌▄▖▙▘▐ ▛▖▌▌▌▐ ▛▖▌▌ ▚ 
@@ -306,4 +310,7 @@
 
 ;; Imenu
 (global-set-key (kbd "M-i") 'imenu)
+
+
+
 
