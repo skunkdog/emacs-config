@@ -5,7 +5,7 @@
 * Compile angel - auto compilation of elisp files. (Make emacs faster)
 * vterm - Terminal in emacs
 ##### UI:
-* Doom-themes (Gruvbox is selected by default
+* Gruber-darker theme
 * Nerd icons
 * Nyan mode (Cute :3)
 * Minimal dashboard
@@ -20,7 +20,7 @@
 ##### Completion frameworks:
 * Vertico
 * Orderless
-* Marginalia
+* Marginaliaz
 * Corfu
 
 Config is very easy to read and change for your needs. This is a good start if you want to try vanilla emacs!
