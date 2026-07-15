@@ -77,9 +77,13 @@
 (use-package crux
   :straight t
   )
+
+;; Clock in bar
+(display-time-mode 1)
+
 ;; ▖▖▄▖
 ;; ▌▌▐ 
-;; ▙▌▟▖ ui
+;; ▙▌▟▖ ui 
 
 ;; Theme
 (use-package gruber-darker-theme
@@ -169,7 +173,7 @@
   :straight t
   :config
   (global-set-key (kbd "C-q") 'surround-insert)
-  (global-set-key (kbd "C-M-q") 'surround-change)
+  (global-set-key (kbd "C-S-q") 'surround-change)
   )
 
 ;; YASsnippets
@@ -279,7 +283,7 @@
 
 ;; ▖▖▄▖▖▖  ▄ ▄▖▖ ▖▄ ▄▖▖ ▖▄▖▄▖
 ;; ▙▘▙▖▌▌▄▖▙▘▐ ▛▖▌▌▌▐ ▛▖▌▌ ▚ 
-;; ▌▌▙▖▐   ▙▘▟▖▌▝▌▙▘▟▖▌▝▌▙▌▄▌
+;; ▌▌▙▖▐   ▙▘▟▖▌▝▌▙▘▟▖▌▝▌▙▌▄▌key-bindings
 
 ;; Other window
 (global-set-key (kbd "M-o") 'other-window)
@@ -311,6 +315,8 @@
 ;; Imenu
 (global-set-key (kbd "M-i") 'imenu)
 
-
-
-
+;; ;;Tabs
+;; (global-set-key (kbd "C-z n t") 'tab-line-new-tab)
+;; (global-set-key (kbd "C-z q t") 'tab-line-close-tab)
+;; (global-set-key (kbd "C-z C-l") 'tab-line-switch-to-next-tab)
+;; (global-set-key (kbd "C-z C-h") 'tab-line-switch-to-prev-tab)
