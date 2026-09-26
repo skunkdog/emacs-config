@@ -1,0 +1,4 @@
+alias clear clear-scrollback
+alias c clear-scrollback
+alias ff fastfetch --logo small
+alias ls ls -1
