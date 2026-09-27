@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-;;; Package management
+;;; {{{ Package management
 (eval-when-compile
   (require 'use-package))
 
@@ -20,9 +20,9 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
+;;;}}}
 
-
-;;; General configuration
+;;; {{{ General configuration
 (global-unset-key (kbd "C-z"))
 
 (setq ring-bell-function #'ignore)
@@ -95,8 +95,9 @@
 
 (global-set-key (kbd "C-z b s") #'bookmark-set)
 (global-set-key (kbd "C-z b j") #'consult-bookmark)
+;;; }}}
 
-;;; Interface
+;;; {{{ Interface
 
 (menu-bar-mode 0)
 (tool-bar-mode 0)
@@ -107,8 +108,9 @@
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
+;;; }}}
 
-;;; Dired
+;;; {{{ Dired
 
 (setq dired-listing-switches
       (if (executable-find "gls")
@@ -124,15 +126,17 @@
         dired-listing-switches))
 
 (put 'dired-find-alternate-file 'disabled nil)
+;;; }}}
 
-;;; Org
+;;; {{{ Org
 (add-hook
  'org-mode-hook
  (lambda ()
    (local-set-key (kbd "M-h") #'org-metaleft)
    (local-set-key (kbd "M-l") #'org-metaright)))
+;;;}}}
 
-;;; Packages
+;;; {{{Packages
 
 (use-package listen
   :straight t
@@ -307,10 +311,10 @@
   (add-hook 'after-init-hook #'vertico-indexed-mode)
   )
 
-;; ;; Persist history over Emacs restarts. Vertico sorts by history position.
-;; (use-package savehist
-;;   :init
-;;   (savehist-mode))
+;; Persist history over Emacs restarts. Vertico sorts by history position.
+(use-package savehist
+  :init
+  (savehist-mode))
 
 ;; Emacs minibuffer configurations.
 (use-package emacs
@@ -394,8 +398,9 @@
 	  tab-always-indent 'complete)
   (add-hook 'after-init-hook #'global-corfu-mode))
 
+;;; }}}
 
-;; ;;; EXWM
+;;; {{{ EXWM
 
 ;; (use-package exwm
 ;;   :straight t
@@ -444,8 +449,9 @@
 ;;   :after exwm
 ;;   :init
 ;;   (add-hook 'exwm-init-hook #'exwm-outer-gaps-mode))
+;}}}
 
-;;; My functions
+;;; {{{ My functions
 
 (defun my/switch-to-eww ()
   "Switch to an existing EWW buffer, or create one if none exists."
@@ -496,6 +502,7 @@
                       (switch-to-prev-buffer (get-buffer-window buf) 'kill))
                     buffer)))
 (add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
+;;; }}}
 
 ;;; Custom file
 (setq custom-file
