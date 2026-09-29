@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-;;; {{{ Package management
+;;; {{{ Package managers
 (eval-when-compile
   (require 'use-package))
 
@@ -136,7 +136,7 @@
    (local-set-key (kbd "M-l") #'org-metaright)))
 ;;;}}}
 
-;;; {{{Packages
+;;; {{{ Packages
 
 (use-package listen
   :straight t
@@ -155,7 +155,7 @@
 (use-package god-mode
   :straight t
   :bind
-  (("C-;" . god-mode-all))
+  (("C-;" . god-local-mode))
   )
 
 (use-package vterm
@@ -275,7 +275,12 @@
   :config
   (vimish-fold-global-mode 1)
     :bind
-  (("C-<return>" . vimish-fold-toggle))
+    (("C-<return>" . vimish-fold-toggle))
+    (("C-z f t" . vimish-fold-toggle))
+    
+    (("C-z f f" . vimish-fold))
+
+    (("C-z f d" . vimish-fold-delete))
   )
 
 (use-package yasnippet
@@ -486,27 +491,28 @@
      vocab-file-location)))
 (global-set-key (kbd "C-z v a") #'my/vocab-add)
 
-(defun bury-compile-buffer-if-successful (buffer string)
- "Bury a compilation buffer if succeeded without warnings "
- (when (and
-         (buffer-live-p buffer)
-         (string-match "compilation" (buffer-name buffer))
-         (string-match "finished" string)
-         (not
-          (with-current-buffer buffer
-            (goto-char (point-min))
-            (search-forward "warning" nil t))))
-    (run-with-timer 0 nil
-                    (lambda (buf)
-                      (bury-buffer buf)
-                      (switch-to-prev-buffer (get-buffer-window buf) 'kill))
-                    buffer)))
-(add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
+;; (defun bury-compile-buffer-if-successful (buffer string)
+;;  "Bury a compilation buffer if succeeded without warnings "
+;;  (when (and
+;;          (buffer-live-p buffer)
+;;          (string-match "compilation" (buffer-name buffer))
+;;          (string-match "finished" string)
+;;          (not
+;;           (with-current-buffer buffer
+;;             (goto-char (point-min))
+;;             (search-forward "warning" nil t))))
+;;     (run-with-timer 0 nil
+;;                     (lambda (buf)
+;;                       (bury-buffer buf)
+;;                       (switch-to-prev-buffer (get-buffer-window buf) 'kill))
+;;                     buffer)))
+;; (add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
 ;;; }}}
 
 ;;; Custom file
 (setq custom-file
       (locate-user-emacs-file "custom.el"))
+
 
 (when (file-exists-p custom-file)
    (load custom-file))

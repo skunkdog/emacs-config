@@ -31,7 +31,9 @@
      "146262fb5559829677fbaf3bce182ab9d5ebd5f026dcbb24a57744a4a74b3d5f"
      "3ee898efcd3fa5b63c4f15e225f3616497010f2347a514490be8b563edbd39d9"
      "4dceb2b617056fbc769332fbefa8fece5ea2ad27aed04aad25346d3497fca439"
-     default)))
+     default))
+ '(initial-scratch-message
+   ";; Poopy-di-scoop\12;; Scoop-diddy-whoop\12;; Whoop-di-scoop-di-poop\12;; Poopty-scoopty, scoopty-whoop\12"))
 
 (set-frame-font
  (font-spec
