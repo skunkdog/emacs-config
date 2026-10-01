@@ -23,7 +23,10 @@
 ;;;}}}
 
 ;;; {{{ General configuration
+
 (global-unset-key (kbd "C-z"))
+
+(global-set-key (kbd "C-z p") 'ff-find-related-file)
 
 (setq ring-bell-function #'ignore)
 
@@ -287,7 +290,10 @@
   :straight t
   :commands
   (yas-minor-mode
-   yas-global-mode))
+   yas-global-mode)
+  :init
+  (yas-global-mode 1)
+  )
 
 
 (use-package yasnippet-snippets
@@ -405,56 +411,71 @@
 
 ;;; }}}
 
-;;; {{{ EXWM
+;; {{{ EXWM
 
-;; (use-package exwm
-;;   :straight t
-;;   :config
-;;   (setq exwm-workspace-number 4)
+(use-package exwm
+  :straight t
+  :config
+  (setq exwm-workspace-number 4)
 
-;;   (add-hook
-;;    'exwm-update-class-hook
-;;    (lambda ()
-;;      (exwm-workspace-rename-buffer exwm-class-name)))
+  (add-hook
+   'exwm-update-class-hook
+   (lambda ()
+     (exwm-workspace-rename-buffer exwm-class-name)))
 
-;;   (setq exwm-input-global-keys
-;;         `(([?\s-d]
-;;            . (lambda ()
-;;                (interactive)
-;;                (start-process "dmenu" nil "dmenu_run")))
+  (setq exwm-input-global-keys
+        `(([?\s-d]
+           . (lambda ()
+               (interactive)
+               (start-process "dmenu" nil "dmenu_run")))
 
-;;           ([?\s-g] . exwm-outer-gaps-mode)
-;;           ([?\s-p] . exwm-outer-gaps-increment)
-;;           ([?\s-y] . exwm-outer-gaps-decrement)
+          ([?\s-g] . exwm-outer-gaps-mode)
+          ([?\s-p] . exwm-outer-gaps-increment)
+          ([?\s-y] . exwm-outer-gaps-decrement)
 
-;;           ([?\s-r] . exwm-reset)
-;;           ([?\s-w] . exwm-workspace-switch)
+          ([?\s-r] . exwm-reset)
+          ([?\s-w] . exwm-workspace-switch)
 
-;;           ([?\s-&]
-;;            . (lambda (cmd)
-;;                (interactive
-;;                 (list (read-shell-command "$ ")))
-;;                (start-process-shell-command cmd nil cmd)))
+          ([?\s-&]
+           . (lambda (cmd)
+               (interactive
+                (list (read-shell-command "$ ")))
+               (start-process-shell-command cmd nil cmd)))
 
-;;           ,@(mapcar
-;;              (lambda (i)
-;;                `(,(kbd (format "s-%d" i))
-;;                  . (lambda ()
-;;                      (interactive)
-;;                      (exwm-workspace-switch-create ,i))))
-;;              (number-sequence 0 9))))
-;;   :init
-;;   (exwm-wm-mode 1)
-;;   )
+          ,@(mapcar
+             (lambda (i)
+               `(,(kbd (format "s-%d" i))
+                 . (lambda ()
+                     (interactive)
+                     (exwm-workspace-switch-create ,i))))
+             (number-sequence 0 9))))
+  :init
+  (exwm-wm-mode 1)
+  )
 
 
-;; (use-package exwm-outer-gaps
-;;   :straight (:host github
-;;              :repo "skunkdog/exwm-outer-gaps")
-;;   :after exwm
-;;   :init
-;;   (add-hook 'exwm-init-hook #'exwm-outer-gaps-mode))
-;}}}
+(use-package exwm-outer-gaps
+  :straight (:host github
+             :repo "skunkdog/exwm-outer-gaps")
+  :after exwm
+  :init
+  (add-hook 'exwm-init-hook #'exwm-outer-gaps-mode))
+
+(use-package exwm-edit
+  :straight t
+  :config
+  ;; Edit text in an *exwm-edit* buffer
+  (add-to-list 'exwm-input-global-keys '([?\C-c ?\'] . exwm-edit--compose))
+  (add-to-list 'exwm-input-global-keys '([?\C-c ?\'] . exwm-edit--compose))
+
+  ;; You can use hooks to, e.g., set desired mode:
+  (defun ag-exwm/on-exwm-edit-compose ()
+    (funcall 'org-mode))
+
+  (add-hook 'exwm-edit-compose-hook 'ag-exwm/on-exwm-edit-compose)
+  )
+
+;; }}}
 
 ;;; {{{ My functions
 
@@ -491,29 +512,9 @@
      vocab-file-location)))
 (global-set-key (kbd "C-z v a") #'my/vocab-add)
 
-;; (defun bury-compile-buffer-if-successful (buffer string)
-;;  "Bury a compilation buffer if succeeded without warnings "
-;;  (when (and
-;;          (buffer-live-p buffer)
-;;          (string-match "compilation" (buffer-name buffer))
-;;          (string-match "finished" string)
-;;          (not
-;;           (with-current-buffer buffer
-;;             (goto-char (point-min))
-;;             (search-forward "warning" nil t))))
-;;     (run-with-timer 0 nil
-;;                     (lambda (buf)
-;;                       (bury-buffer buf)
-;;                       (switch-to-prev-buffer (get-buffer-window buf) 'kill))
-;;                     buffer)))
-;; (add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
-;;; }}}
-
 ;;; Custom file
 (setq custom-file
       (locate-user-emacs-file "custom.el"))
 
-
 (when (file-exists-p custom-file)
    (load custom-file))
-(kill-matching-buffers-no-ask "")
