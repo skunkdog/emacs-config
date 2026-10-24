@@ -5,7 +5,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(doom-1337))
+ '(custom-enabled-themes '(doom-gruvbox))
  '(custom-safe-themes t)
  '(dimmer-fraction 0.2)
  '(dired-listing-switches "-l -a")
@@ -13,6 +13,7 @@
  '(display-line-numbers-width nil)
  '(display-time-24hr-format t)
  '(display-time-mode t)
+ '(eshell-buffer-name "Terminal")
  '(org-modern-star 'replace)
  '(spacious-padding-mode t)
  '(spacious-padding-widths
@@ -40,7 +41,7 @@
 
 (set-frame-font
  (font-spec
-  :family "Aporetic Sans mono"
+  :family "Aporetic Sans Mono"
   :weight 'bold
   :size 19)
  nil t)

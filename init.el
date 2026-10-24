@@ -33,12 +33,15 @@
 
 ;; Doc-view disable tool-tip
 (tooltip-mode 0)
-
+;; general keybindings
 (global-set-key (kbd "M-i") 'imenu)
 (global-unset-key (kbd "C-z"))
-(global-set-key (kbd "C-z p") 'ff-find-related-file)
+(global-set-key (kbd "C-z C-o") 'eshell)
+(global-set-key (kbd "C-z C-l") 'vterm)
+(global-set-key (kbd "C-z C-p") 'ff-find-related-file)
 (global-unset-key (kbd "C-j"))
 (global-set-key (kbd "C-j") 'man)
+
 (setopt ring-bell-function #'ignore)
 
 (setopt backup-directory-alist
@@ -75,18 +78,17 @@
 
 ;;; }}}
 
-;;; {{{ Interface
+;; {{{ Interface
+
+(hl-line-mode)
 
 ;; Display time at  the bar
 (display-time-mode 1)
 
-(use-package moody
+(use-package doom-modeline
   :straight t
-  :config
-  (setopt moody-mode-line-height 30)
-  (moody-replace-mode-line-front-space)
-  (moody-replace-mode-line-buffer-identification)
-  (moody-replace-vc-mode)
+  :init
+  (doom-modeline-mode)
   )
 
 (use-package spacious-padding
@@ -95,9 +97,9 @@
   (spacious-padding-mode 1)
   )
 
-;; Mode line at the top
-(setq-default header-line-format mode-line-format)
-(setq-default mode-line-format nil)
+;; ;; Mode line at the top
+;; (setq-default header-line-format mode-line-format)
+;; (setq-default mode-line-format nil)
 
 
 
@@ -131,6 +133,17 @@
 ;;;}}}
 
 ;;; {{{ Packages
+
+(use-package vterm
+  :straight t
+  )
+
+
+(use-package god-mode
+  :straight t
+  :bind
+  (("C-;" . god-local-mode))
+  )
 
 (use-package yafolding
   :straight t
@@ -282,9 +295,9 @@
   (:map corfu-map
         ("M-<return>" . corfu-insert-separator))
   :init
-  (setopt corfu-auto t
+  (setopt corfu-auto nil
           corfu-auto-delay 0.2
-          corfu-auto-prefix 2
+          corfu-auto-prefix 5
           corfu-border-width 7
           tab-always-indent 'complete)
   (add-hook 'after-init-hook #'global-corfu-mode))
@@ -371,6 +384,20 @@
   (add-hook 'exwm-edit-compose-hook 'ag-exwm/on-exwm-edit-compose)
   )
 
+(use-package qutebrowser
+  :straight (qutebrowser :host github
+                       :repo "lrustand/qutebrowser.el"
+                       :files (:defaults "*.py"))
+  :bind
+  (("C-x C-c" . qutebrowser-launcher)
+   ("C-x C-b" . qutebrowser-launcher-tab)
+)
+  :config
+  (server-start)
+  (global-qutebrowser-exwm-mode)
+  (global-qutebrowser-doom-modeline-mode 0)
+  )
+
 ;; }}}
 
 
@@ -388,6 +415,7 @@
       (switch-to-buffer eww-buffer)
     (call-interactively #'eww)))
 (global-set-key (kbd "C-z s e") #'my/switch-to-eww)
+
 
 
 (defvar vocab-file-location

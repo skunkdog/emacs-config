@@ -1,6 +1,8 @@
-alias qmake qmake-qt6
 alias c clear-scrollback
 alias clear clear-scrollback
-alias ff fastfetch --logo small
+alias ff exfetch -a OpenBSD
 alias ls ls -1
+alias p doas halt -p
+alias qmake qmake-qt6
 alias sl ls $*
+alias wg-restart wg-quick down vpn && wg-quick up vpn
